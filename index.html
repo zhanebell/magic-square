@@ -14,6 +14,21 @@ footer{display:flex;justify-content:space-between;align-items:center;gap:10px;pa
 .tray{display:grid;grid-template-columns:repeat(5,48px);justify-content:center;gap:9px;margin:22px auto 10px;min-height:115px}.tile{width:48px;height:48px;border:1px solid #ddcca4;border-radius:11px;background:linear-gradient(145deg,#ead9b4,#c5ab7f);color:#273b2d;font:600 26px 'Cormorant Garamond',Georgia,serif;box-shadow:0 4px 0 #826d4e;cursor:grab;touch-action:none}.tile:disabled{opacity:.17;box-shadow:none}.ghost{position:fixed;z-index:100;pointer-events:none;transform:translate(-50%,-60%)}
 #status{min-height:20px;font-size:13px;color:#c7d8b0}.hint{font-size:11px;color:#8fa194;line-height:1.7;max-width:320px;margin:18px auto}
 @media(max-width:370px){main{padding:20px 12px}.tray{grid-template-columns:repeat(5,43px);gap:7px}.tile{width:43px;height:43px}#game{padding:18px}.grid{gap:6px}}@media(prefers-reduced-motion:reduce){.grid.solved .cell{animation:none}}
+
+/* Compact mobile layout: keep both rows of number tiles above Safari's bottom toolbar. */
+@media(max-width:600px){
+ main{padding:12px 14px max(18px,env(safe-area-inset-bottom))}
+ h1{font-size:clamp(38px,11vw,48px);margin:0 0 3px}
+ header p{font-size:11px;line-height:1.4;margin:0 auto 12px;max-width:310px}
+ .stats{margin-bottom:9px;gap:55px}.stats strong{font-size:25px}
+ #game{padding:12px 16px 14px}.grid{max-width:min(100%,36svh);margin:auto;gap:6px}
+ footer{padding:8px 12px}select,#restart{min-height:38px}#restart{width:38px}
+ .tray{grid-template-columns:repeat(5,43px);gap:7px;margin:13px auto 4px;min-height:93px}
+ .tile{width:43px;height:43px;font-size:24px}
+ #status{min-height:16px;font-size:12px;margin:4px 0}
+ .preview{min-height:min(300px,42svh)}
+}
+@media(max-width:370px){.grid{max-width:min(100%,35svh)}.tray{grid-template-columns:repeat(5,40px)}.tile{width:40px;height:40px}}
 </style></head><body>
 <main><header><h1>Magic Square</h1><p>Every row, column, and diagonal must add up to the same number.</p></header>
 <section class="stats"><div><small>TIME</small><strong id="time">0:00</strong></div><div><small>BEST TIME</small><strong id="best">—</strong></div></section>
