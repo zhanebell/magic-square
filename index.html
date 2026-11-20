@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0d2019"><title>Magic Square · After Hours</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0d2019"><title>Magic Square</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap');
 :root{color-scheme:dark;font-family:Nunito,system-ui,sans-serif;color:#e9dfc6;background:#0b1c18}*{box-sizing:border-box}[hidden]{display:none!important}
@@ -15,11 +15,11 @@ footer{display:flex;justify-content:space-between;align-items:center;gap:10px;pa
 #status{min-height:20px;font-size:13px;color:#c7d8b0}.hint{font-size:11px;color:#8fa194;line-height:1.7;max-width:320px;margin:18px auto}
 @media(max-width:370px){main{padding:20px 12px}.tray{grid-template-columns:repeat(5,43px);gap:7px}.tile{width:43px;height:43px}#game{padding:18px}.grid{gap:6px}}@media(prefers-reduced-motion:reduce){.grid.solved .cell{animation:none}}
 </style></head><body>
-<main><header><div class="eyebrow">AFTER HOURS · A LITTLE SUM UNDER THE STARS</div><h1>Magic Square</h1><p>Every row, column, and diagonal must add up to the same number.</p></header>
+<main><header><h1>Magic Square</h1><p>Every row, column, and diagonal must add up to the same number.</p></header>
 <section class="stats"><div><small>TIME</small><strong id="time">0:00</strong></div><div><small>BEST TIME</small><strong id="best">—</strong></div></section>
 <section class="panel"><div id="preview" class="preview"><small id="previewLabel">YOUR MAGIC SUM</small><div id="previewNum">15</div><button id="begin" class="primary">Begin</button></div><div id="game" hidden><div id="grid" class="grid" aria-label="Magic square"></div></div>
 <footer><div class="target"><small>EVERY LINE</small><b id="target">15</b></div><div class="actions"><select id="difficulty" aria-label="Difficulty"><option value="gentle">1 · Gentle</option><option value="glowing">2 · Glowing</option><option value="midnight">3 · Midnight</option></select><button id="restart" title="New puzzle" aria-label="New puzzle">↻</button></div></footer></section>
-<div id="tray" class="tray" aria-label="Number tiles"></div><p id="status" role="status"></p><p class="hint">Tap a square, then a number. You can also drag tiles into place. Tap a filled square twice to return its tile.</p>
+<div id="tray" class="tray" aria-label="Number tiles"></div><p id="status" role="status"></p>
 </main>
 <script>
 "use strict";
